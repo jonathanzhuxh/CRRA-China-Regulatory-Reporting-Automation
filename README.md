@@ -14,13 +14,13 @@ Independently architected and delivered a full automation suite from scratch —
 
 Core components:
 
-A custom 3+6 data model decoupling core business data from regulatory logic
+1. A custom 3+6 data model decoupling core business data from regulatory logic
 
-50+ automation pipelines built on Dataiku covering ingestion, calculation, validation, and variance analysis
+2. 50+ automation pipelines built on Dataiku covering ingestion, calculation, validation, and variance analysis
 
-Automated anomaly detection and cross-report reconciliation
+3. Automated anomaly detection and cross-report reconciliation
 
-Confluence-based documentation enabling full handover to business users
+4. Confluence-based documentation enabling full handover to business users
 
 ![System Overview](assets/overview.png)
 
