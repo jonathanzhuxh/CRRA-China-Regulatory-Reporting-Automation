@@ -1,3 +1,5 @@
+# Sustainable Digitalisation Why I Designed a System to Make Itself Unnecessary
+
 In most organisations, job security comes from being indispensable.
 
 You know the system. You understand the logic. You’re the only one who can fix it when it breaks. This feels like protection. In the short term, it is.
