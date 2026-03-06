@@ -63,8 +63,6 @@ This system was designed across three layers of sustainability:
 
 ***Sustainable digitalisation means building something that outlives its creator.***
 
-For more details: [Design Philosophy](PHILOSOPHY.md)
-
 ## Architecture Philosophy
 
 Five principles, in order:
