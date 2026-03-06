@@ -72,7 +72,7 @@ A retail customer table would have been architecturally cleaner. It would also h
 
 Built on Dataiku — the first production deployment of the platform within Standard Chartered China, and the foundation of what became the bank’s low-code ecosystem.
 
-*The migration story behind this*
+### The migration story behind this
 
 The original plan was to build on Alteryx, which several departments were already exploring. A group-level policy shift mandated a switch to Dataiku before development began in earnest. The migration happened in one month.
 
