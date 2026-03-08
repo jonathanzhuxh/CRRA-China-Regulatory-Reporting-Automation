@@ -103,7 +103,7 @@ All pipelines are chained via Dataiku Scenarios. One trigger initiates the entir
 
 ## 4. CRRA Data Flow
 
-![CRRA Data Flow](assets/CRRA_Detail_Dataflow.png)
+![CRRA Data Flow](assets/CRRA Detail Dataflow.png)
 
 
 Every data flow in this system is automated — with one deliberate exception.
