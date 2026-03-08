@@ -1,95 +1,62 @@
 # China Regulatory Reporting Automation
 
-
 End-to-end data pipeline architecture for financial regulatory compliance
+
+---
 
 ## The Problem
 
-A top-tier international bank in China faced a breaking point: 900+ regulatory reports across NFRA and PBOC frameworks, all dependent on manual processing, with data inconsistencies, high compliance risks, and submission windows being routinely missed.
+Every major international bank operating in China faces the same regulatory data challenge: two regulators — NFRA and PBOC — with overlapping but inconsistent frameworks, hundreds of reports per submission cycle, and source data that was never designed with regulatory logic in mind.
 
-The existing system had no real architecture — no separation between business data and regulatory logic, no validation, no auditability. Every change required IT intervention. Every error required manual firefighting.
+The industry's default response has been to throw people at it. More headcount, more manual checks, more spreadsheet gymnastics. This works until it doesn't — and when it fails, it fails at 11pm before a submission deadline.
+
+The deeper problem is structural. Most reporting systems in this space were never architected; they accumulated. Business data and regulatory logic live in the same tables. Validation is manual. Auditability is a fiction. Every change requires IT. Every error requires a person who knows where the bodies are buried.
+
+When that person leaves, the system doesn't just slow down. It stops.
+
+---
 
 ## The Solution
 
 Independently architected and delivered a full automation suite from scratch — no dedicated engineering team, no external consultants, in three months.
 
-Core components:
-
-1. A custom 3+6 data model decoupling core business data from regulatory logic
-
-2. 50+ automation pipelines built on Dataiku covering ingestion, calculation, validation, and variance analysis
-
-3. Automated anomaly detection and cross-report reconciliation
-
-4. Confluence-based documentation enabling full handover to business users
-
 ![System Overview](assets/overview.png)
 
-## Engineering Philosophy: The Five-Step Path
+The core of the system is a custom **3+6 data model** that strictly separates business data from regulatory logic — so a change in one never breaks the other. On top of it, **50+ automation pipelines** handle ingestion, quality control, GL reconciliation, report generation, variance analysis, and cross-report validation end-to-end.
 
-Borrowed from aerospace, proven in banking.
+The design was built for longevity, not just delivery. Business users were trained to own and maintain the system independently. The documentation was written for handover, not for record-keeping. When the project lead left, there was zero operational disruption.
 
-In 2021, during a walkthrough of SpaceX’s Starbase facility, Musk outlined the engineering philosophy behind how his teams build — five steps, in strict order:
+The system outlived its creator. Then it outlived its platform. The methodology is still running.
 
-**1. Make the requirements less dumb.**
-	
-**2. Delete the part or process step.**
-	
-**3. Simplify or optimize.**
-	
-**4. Accelerate cycle time.**
-	
-**5. Automate.**
+**Built with:** `Dataiku` `SQL` `Python` `Alteryx` `Confluence`
 
-*A note on testing: Musk applies one additional principle across steps 3–5 — test the full system, not just the parts. SpaceX didn’t just test rocket components. They launched, and accepted the explosion as data. The only test that matters is the one that replicates real conditions at full scale.*
+→ [Architecture & Design Decisions](ARCHITECTURE.md)
 
-It was a casual conversation, not a management framework. Most people who heard it filed it under “interesting Musk anecdote.”
+---
 
-I filed it under “this is exactly what’s wrong with how banks build things.”
+## The Methodology
 
-The result: three months from blank page to production.
+Delivery in three months wasn't the result of working faster. It was the result of thinking differently about what needed to exist at all.
 
-## Design Philosophy: Building for Longevity
+The guiding principle — borrowed from aerospace, applied to banking — was to question every requirement before building anything, delete every process step that couldn't justify its existence, and automate only what remained. Most systems accumulate complexity because nobody asks whether the complexity was necessary in the first place.
 
-Delivery was never the finish line. The real measure of success was what happened after handover.
+The same principle drove the build-for-longevity decisions: low-code over Python, mirror tables over exception systems, deliberate denormalisation over theoretical purity. Every choice was evaluated against one question: can someone else maintain this without me?
 
-This system was designed across three layers of sustainability:
+→ [Philosophy: Sustainable Digitalisation](PHILOSOPHY.md)
 
-**System** — Decoupled architecture ensures regulatory logic changes never touch core business data. No black boxes. Every calculation is traceable and maintainable by the next person.
-
-**People** — Business users were trained to own and maintain the system independently. The goal was to eliminate IT dependency, not transfer it.
-
-**Organisation** — The architecture and methodology were adopted as the standard template for all future Finance regulatory reporting automation within the bank — extending beyond loans into a full cross-business framework.
-
-***Sustainable digitalisation means building something that outlives its creator.***
-
-## Architecture Philosophy
-
-Five principles, in order:
-
-**Decoupling** — Business data and regulatory logic are strictly separated. Changes in one never break the other.
-
-**Minimalism** — Every component earns its place. Nothing exists without a purpose. No redundancy, no padding.
-
-**Scalability** — Because the system is minimal and decoupled, it scales without accumulating debt. What started as a loans reporting architecture became the Finance department’s organisation-wide automation standard.
-
-**Transparency** — No black boxes. Every calculation is visible, traceable, and auditable — by design, not by documentation.
-
-**Pragmatism** — Perfect is the enemy of shipped. Where extreme normalisation would have delayed delivery, deliberate denormalisation was chosen. The system went live; the theoretical purity did not.
+---
 
 ## Outcomes
 
-|Metric                      |Result                                    |
-|----------------------------|------------------------------------------|
-|Delivery timeline           |3 months                                  |
-|Monthly FTE saved           |3+                                        |
-|Report delivery acceleration|48 hours                                  |
-|System complexity reduction |40%                                       |
-|Data consistency            |100% via automated validation             |
-|Organisational impact       |Adopted as bank-wide standard architecture|
+| Metric | Result |
+|---|---|
+| Delivery timeline | 3 months |
+| Monthly FTE saved | 3+ |
+| Report delivery acceleration | 48 hours |
+| System complexity reduction | 40% |
+| Data consistency | 100% via automated validation |
+| Organisational impact | Adopted as bank-wide standard architecture |
 
-## Tech Stack
-`Dataiku` `SQL` `Python` `Alteryx` `Confluence`
+The architecture was eventually adopted as the standard template for all future Finance regulatory reporting automation within the bank — extending beyond loans into a full cross-business framework. A long-standing reconciliation failure between NFRA 1104 and EAST reports was resolved as a byproduct of shared data lineage. When the low-code platform was discontinued, the engineering team didn't revert. They went looking for another tool to keep working the same way.
 
-→ [System Architecture & Design Decisions](ARCHITECTURE.md)
 
