@@ -1,4 +1,4 @@
-## Chapter 1 — Applying Musk's Five-Step Engineering Process to Bank Regulatory Reporting
+## Chapter 1 — Musk的五步法在银行 (Applying Musk's Five-Step Engineering Process to Bank Regulatory Reporting)
 
 Banks and Elon Musk's engineering philosophy seem like they belong in different universes.
 
@@ -72,7 +72,7 @@ That's the real test of an engineering philosophy: not whether it delivers on ti
 
 ---
 
-## Chapter 2 — Sustainable Digitalisation
+## Chapter 2 — 可持续的数字化 (Sustainable Digitalisation)
 
 It didn't start as a philosophy. It started as a fear.
 
@@ -100,7 +100,7 @@ Not because it makes you dispensable — but because it frees you to keep moving
 
 ---
 
-## Chapter 3 — Automation Is Not the Finish Line
+## Chapter 3 — 自动化不是结束，而是开始 (Automation Is Not the Finish Line)
 
 There is a belief, widespread in financial services, that automation is the destination.
 
@@ -110,7 +110,7 @@ Get the system built, get it live, get it signed off — and the work is done. T
 
 ### What a live system actually demands
 
-After the system I built went live, my work didn't reduce. It changed.
+After the system I built at Standard Chartered went live, my work didn't reduce. It changed.
 
 Every month, I spent five to six days on operations alone — monitoring actual submission runs, tracing anomalies, validating that outputs matched regulatory expectations under real conditions. On top of that, I was making incremental upgrades every single month: tightening logic, closing edge cases, extending coverage as the business evolved.
 
@@ -118,7 +118,7 @@ Then there was the upstream work. The system's long-term quality depended on the
 
 None of this was unusual or unexpected. It was simply what owning a live regulatory reporting system requires.
 
-What was unexpected was being told, in that context, that the role was no longer necessary.
+The confusion — and it is a confusion, not a deliberate choice — arises when organisations treat two very different things as equivalent: a system that no longer depends on its original creator, and a function that no longer needs to exist at all. The first is a design objective. The second is a category error.
 
 ### The cognitive error non-technical leaders make
 
@@ -130,9 +130,9 @@ What this misses is everything that keeps a live system running well.
 
 Regulatory requirements in China don't update on a fixed schedule. In 2025 alone, there were two significant off-cycle framework updates — the kind that arrive without warning and require immediate response. I had anticipated one of them from early in the year, based on my reading of the macro environment, and had already built ahead for it. The architecture absorbed the change cleanly, without crisis.
 
-That anticipation wasn't a technical skill. It was judgment built from years of watching how regulatory policy in China evolves — judgment that sits at the intersection of data architecture, financial regulation, and domestic policy dynamics. It is not something you can hire away cheaply. It is not something a successor can acquire in a few months. And it is not something any tool, however capable, can replicate.
+That anticipation is not a technical skill. It is the accumulated product of sustained attention — to the regulatory environment, to the data landscape, to the signals that indicate where policy is heading before the announcements arrive. It accrues to whoever holds the function continuously. It does not transfer in a handover document. And no tool, however capable, generates it independently.
 
-When that role was eliminated, several hard problems were mid-flight. Upstream data sources that had been partially rationalised but not fully resolved. Structural improvements that were months away from completion. Capability that had been accumulating over years — and stopped accumulating the day the role disappeared.
+When that function is eliminated at project completion, what stops is not just a person. It is a trajectory — the incremental improvements, the upstream work without a ticket number, the judgment that was still being built. The system was designed not to need its creator. It was not designed to run without anyone.
 
 ### The question most organisations don't ask
 
@@ -162,7 +162,7 @@ Automation complete is not the end of the story. It is where the real work begin
 
 ---
 
-## Chapter 4 — Low-Code in the Age of AI
+## Chapter 4 — AI时代的低代码 (Low-Code in the Age of AI)
 
 Accept the premise of Chapter 3 — that the real cost of automation is in what comes after go-live — and a harder question follows: which tools are actually designed for that reality?
 
