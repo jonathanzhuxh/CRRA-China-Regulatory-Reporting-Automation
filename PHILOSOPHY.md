@@ -1,4 +1,4 @@
-## Chapter 1 — Musk的五步法在银行 (Applying Musk's Five-Step Engineering Process to Bank Regulatory Reporting)
+## Chapter 1 — Applying Musk's Five-Step Engineering Process to Bank Regulatory Reporting
 
 Banks and Elon Musk's engineering philosophy seem like they belong in different universes.
 
@@ -72,7 +72,7 @@ That's the real test of an engineering philosophy: not whether it delivers on ti
 
 ---
 
-## Chapter 2 — 可持续的数字化 (Sustainable Digitalisation)
+## Chapter 2 — Sustainable Digitalisation
 
 It didn't start as a philosophy. It started as a fear.
 
@@ -100,7 +100,7 @@ Not because it makes you dispensable — but because it frees you to keep moving
 
 ---
 
-## Chapter 3 — 自动化不是结束，而是开始 (Automation Is Not the Finish Line)
+## Chapter 3 — Automation Is Not the Finish Line
 
 There is a belief, widespread in financial services, that automation is the destination.
 
@@ -162,7 +162,7 @@ Automation complete is not the end of the story. It is where the real work begin
 
 ---
 
-## Chapter 4 — AI时代的低代码 (Low-Code in the Age of AI)
+## Chapter 4 — Low-Code in the Age of AI
 
 Accept the premise of Chapter 3 — that the real cost of automation is in what comes after go-live — and a harder question follows: which tools are actually designed for that reality?
 
