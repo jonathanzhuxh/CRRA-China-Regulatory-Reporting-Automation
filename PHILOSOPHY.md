@@ -76,7 +76,7 @@ That's the real test of an engineering philosophy: not whether it delivers on ti
 
 It didn't start as a philosophy. It started as a fear.
 
-At JPMorgan, I inherited a regulatory reporting process with no documentation and no institutional memory. The person before me was gone. The logic lived nowhere except in the system itself — and the system didn't explain itself.
+At a previous institution, I inherited a regulatory reporting process with no documentation and no institutional memory. The person before me was gone. The logic lived nowhere except in the system itself — and the system didn't explain itself.
 
 I spent months reverse-engineering what should have taken days. Eventually I built a solution. Then a new problem surfaced: what happens when I leave?
 
@@ -110,7 +110,7 @@ Get the system built, get it live, get it signed off — and the work is done. T
 
 ### What a live system actually demands
 
-After the system I built at Standard Chartered went live, my work didn't reduce. It changed.
+After the system I built went live, my work didn't reduce. It changed.
 
 Every month, I spent five to six days on operations alone — monitoring actual submission runs, tracing anomalies, validating that outputs matched regulatory expectations under real conditions. On top of that, I was making incremental upgrades every single month: tightening logic, closing edge cases, extending coverage as the business evolved.
 
@@ -174,7 +174,7 @@ AI has made this harder to think about clearly, not easier.
 
 When AI generates code that nobody fully designed and nobody fully understands, the maintainability problem isn't solved. It's relocated.
 
-The logic is invisible. The assumptions are undocumented. The edge cases are buried. The next person to touch the system inherits not just code, but a mystery — exactly the situation I found at JPMorgan, except now the mystery was produced by a model rather than a person.
+The logic is invisible. The assumptions are undocumented. The edge cases are buried. The next person to touch the system inherits not just code, but a mystery — exactly the situation I had encountered before, except now the mystery was produced by a model rather than a person.
 
 Some will argue that this doesn't matter: if AI can write the code, AI can also read it, explain it, and modify it. This is partially true and dangerously incomplete.
 
