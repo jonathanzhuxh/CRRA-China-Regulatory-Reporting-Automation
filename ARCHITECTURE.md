@@ -41,13 +41,9 @@ The core of the system is a two-layer data model that strictly separates what th
 
 ### Data Sources
 
-Two upstream systems feed the model:
+A single upstream feed supplies the model: the **Bank General Data Model** in the bank's data warehouse. It is the primary source of truth for all customer and loan records, and all automated data flows originate here.
 
-**Bank General Data Model** — The bank's central data warehouse. The primary source of truth for all customer and loan records. All automated data flows originate here.
-
-**Bank Transaction Process System Data** — A supplementary source covering fields and dimensions absent from the bank's standard data model. Where the General Data Model stops short of regulatory requirements, this source fills the gap.
-
-Having two distinct upstream sources was a constraint, not a design choice. The architecture's response was to consolidate both into a single ingestion entry point, so every downstream component works from the same unified view regardless of source. (The overview diagram in the README simplifies this: both sources are drawn as a single "Bank General Data Model" box feeding the CRRA Data Model. The detailed data flow in Section 4 shows both sources.)
+Where the general data model stops short of regulatory requirements, supplementary transaction-process system data held in the same warehouse fills the gap. It arrives through the same feed and the same single ingestion entry point, so every downstream component works from one unified view.
 
 ### Layer 1: Core Tables (本表)
 
@@ -83,7 +79,7 @@ Built on Dataiku — the first production deployment of the platform within the 
 
 ### Control Module
 
-**Auto Query** — The sole interface between the system and the upstream data sources. All data from both the Bank General Data Model and the Bank Transaction Process System flows through a single entry point, ensuring every downstream component works from the same unified source. One trigger initiates the entire downstream sequence automatically.
+**Auto Query** — The sole interface between the system and the upstream data sources. All upstream data from the Bank General Data Model flows through this single entry point, ensuring every downstream component works from the same unified source. One trigger initiates the entire downstream sequence automatically.
 
 **Data Quality Control** — Triggered automatically on every data pull, bound directly to Auto Query. No manual initiation required. Anomalies surface before any report generation begins — not after. General Ledger reconciliation is performed here: financial totals from the data model are reconciled against the GL before any report generation, catching discrepancies at the source rather than during regulatory review.
 
@@ -112,7 +108,7 @@ Every data flow in this system is automated — with one deliberate exception.
 
 ### Automated Flow (green)
 
-Auto Query pulls from both upstream sources on a scheduled trigger, consolidating all data into a single unified input. Data Quality Control fires immediately and automatically — GL reconciliation runs here, and any anomalies are flagged before any report generation begins. Data Service then distributes the validated data set to the three reporting modules in parallel: NFRA, PBOC, and Regional. Each module runs its report generation, movement analysis, cross-validation, and history storage as a chained sequence, with no human coordination required at any step. The one exception within the automated flow is PBOC Auto Rounding, which loops back to Auto Query — rounding adjustments can affect upstream aggregation, so the feedback loop is necessary to maintain numerical consistency across the full report set.
+Auto Query pulls from the upstream feed on a scheduled trigger, consolidating all data into a single unified input. Data Quality Control fires immediately and automatically — GL reconciliation runs here, and any anomalies are flagged before any report generation begins. Data Service then distributes the validated data set to the three reporting modules in parallel: NFRA, PBOC, and Regional. Each module runs its report generation, movement analysis, cross-validation, and history storage as a chained sequence, with no human coordination required at any step. The one exception within the automated flow is PBOC Auto Rounding, which loops back to Auto Query — rounding adjustments can affect upstream aggregation, so the feedback loop is necessary to maintain numerical consistency across the full report set.
 
 ### Manual Flow (red)
 

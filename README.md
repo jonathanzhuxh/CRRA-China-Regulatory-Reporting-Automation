@@ -8,10 +8,7 @@ End-to-end data pipeline architecture for financial regulatory compliance
 
 ## My Role
 
-<!-- TODO: 时间/职位 -->
-I worked independently on everything in this project except the database build. I diagnosed the problems in the legacy system, mapped the upstream data, and designed the 3+6 data model and the overall architecture. I also defined the regulatory and adjustment rules, built the 50+ Dataiku pipelines (ingestion, data quality, GL reconciliation, report generation, movement analysis, cross-validation), wrote the handover documentation and trained the business users who took over the system.
-
-The physical database implementation of my data model in the bank's data warehouse was built by the bank's technology team.
+**2023–2024.** I owned this project end to end, from diagnosis to delivery. I diagnosed the problems in the legacy system, mapped the upstream data, and designed the 3+6 data model and the overall architecture. I also defined the regulatory and adjustment rules, built the 50+ Dataiku pipelines (ingestion, data quality, GL reconciliation, report generation, movement analysis, cross-validation), wrote the handover documentation and trained the business users who took over the system. The one exception was the physical database implementation of my data model in the bank's data warehouse, which the bank's technology team built.
 
 ---
 
