@@ -1,8 +1,10 @@
 # System Architecture & Design Decisions
 
-This document covers the technical architecture of a regulatory reporting automation suite built for the Finance department of a top-tier international bank in China. The system processes 900+ reports across NFRA and PBOC frameworks, covering 20+ branch entities.
+This document covers the technical architecture of a regulatory reporting automation suite built for the Finance department of a global bank's China subsidiary. The system processes 900+ reports across NFRA and PBOC frameworks, covering 20+ branch entities.
 
 This is not a documentation of what was built. It is a record of why it was built this way.
+
+> *Disclaimer: This repository contains no proprietary code or data. The institution is anonymised, and all diagrams are redrawn.*
 
 ---
 
@@ -35,17 +37,17 @@ These were not implementation problems that better execution would have fixed. T
 
 ## 2. CRRA Data Model
 
-The core of the system is a two-layer data model that strictly separates what the data is from what the regulations require it to mean.
+The core of the system is a two-layer data model that strictly separates what the data is from what the regulations require it to mean. I designed the model (its structure, keys and rule tables). The bank's technology team built the physical database implementation in the data warehouse.
 
 ### Data Sources
 
 Two upstream systems feed the model:
 
-**Bank General Data Model** — The bank's central data warehouse (EDMP). The primary source of truth for all customer and loan records. All automated data flows originate here.
+**Bank General Data Model** — The bank's central data warehouse. The primary source of truth for all customer and loan records. All automated data flows originate here.
 
 **Bank Transaction Process System Data** — A supplementary source covering fields and dimensions absent from the bank's standard data model. Where the General Data Model stops short of regulatory requirements, this source fills the gap.
 
-Having two distinct upstream sources was a constraint, not a design choice. The architecture's response was to consolidate both into a single ingestion entry point, so every downstream component works from the same unified view regardless of source.
+Having two distinct upstream sources was a constraint, not a design choice. The architecture's response was to consolidate both into a single ingestion entry point, so every downstream component works from the same unified view regardless of source. (The overview diagram in the README simplifies this: both sources are drawn as a single "Bank General Data Model" box feeding the CRRA Data Model. The detailed data flow in Section 4 shows both sources.)
 
 ### Layer 1: Core Tables (本表)
 
@@ -75,7 +77,7 @@ Three special rule mapping tables:
 
 ## 3. CRRA Automation Suite
 
-Built on Dataiku — the first production deployment of the platform within Standard Chartered China, and the foundation of what became the bank's low-code ecosystem.
+Built on Dataiku — the first production deployment of the platform within the bank's China subsidiary, and the foundation of what became the bank's low-code ecosystem.
 
 50+ pipeline components, organised into two modules:
 
@@ -133,9 +135,9 @@ This is the only point in the system where a person touches data directly. It wa
 
 Beyond the metrics, three things stand out:
 
-**The system outlived its creator.** The architecture was designed so business users could own and maintain it independently. When the project lead left, there was zero operational disruption.
+**The system outlived my time there.** The architecture was designed so business users could own and maintain it independently. When I left, there was zero operational disruption.
 
-**The system outlived its platform.** When Dataiku was discontinued for political reasons, the engineering team didn't revert to manual processes. They went looking for another tool to keep working the same way. Transparent, documented logic can be migrated. Black boxes cannot.
+**The system outlived its platform.** When Dataiku was later retired following a group-level platform decision, the engineering team didn't revert to manual processes. They went looking for another tool to keep working the same way. Transparent, documented logic can be migrated. Black boxes cannot.
 
 **The methodology outlived the system.** The architecture was adopted as the standard template for all future Finance regulatory reporting automation within the bank — extending beyond loans into a full cross-business framework. Operations teams began replicating the same automation patterns independently. A long-standing reconciliation failure between NFRA 1104 and EAST reports was resolved as a byproduct of shared data lineage.
 
@@ -161,11 +163,11 @@ An individual customer table would have been architecturally cleaner. It would a
 
 **Why low-code instead of Python?**
 
-Python was an option. It was rejected — not primarily because of skill level, but because of what Python-based systems look like to the people who inherit them. Even experienced developers struggle to read each other's code. Expecting Finance business users to maintain a Python pipeline is not a digital transformation strategy. It is a hostage situation. Low-code tools solve a different problem: every transformation step is visible, every logic change is traceable, the visual flow maps directly to how people already think about data. At Standard Chartered, Finance team members with no technical background learned to maintain parts of the system themselves. That is the difference between a system that outlives its creator and one that doesn't.
+Python was an option. It was rejected — not primarily because of skill level, but because of what Python-based systems look like to the people who inherit them. Even experienced developers struggle to read each other's code. Expecting Finance business users to maintain a Python pipeline is not a digital transformation strategy. It is a hostage situation. Low-code tools solve a different problem: every transformation step is visible, every logic change is traceable, the visual flow maps directly to how people already think about data. At the bank, Finance team members with no technical background learned to maintain parts of the system themselves. That is the difference between a system that outlives its creator and one that doesn't.
 
 **Why Dataiku specifically?**
 
-It wasn't a choice — it was a mandate. The original build was planned on Alteryx; a group-level policy shift required migration to Dataiku before development began in earnest. The migration happened in one month. The constraint turned into an advantage: the forced re-examination of every assumption produced a cleaner implementation than the original plan would have. This became the template for how other departments approached Dataiku adoption across Standard Chartered China.
+It wasn't a choice — it was a mandate. The original build was planned on Alteryx; a group-level policy shift required migration to Dataiku before development began in earnest. The migration happened in one month. The constraint turned into an advantage: the forced re-examination of every assumption produced a cleaner implementation than the original plan would have. This became the template for how other departments approached Dataiku adoption across the bank's China subsidiary.
 
 ---
 
