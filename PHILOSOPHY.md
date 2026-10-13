@@ -4,7 +4,7 @@ Banks and Elon Musk's engineering philosophy seem like they belong in different 
 
 One moves in decades. The other moves in weeks. One optimises for never being wrong. The other optimises for finding out what's wrong as fast as possible.
 
-And yet: in 2022, I used the Five-Step Engineering Process to rebuild a regulatory reporting system covering 900+ reports across China's two main financial regulators — and delivered it in three months.
+And yet: in 2023, I used the Five-Step Engineering Process to rebuild a regulatory reporting system covering 900+ reports across China's two main financial regulators — and delivered it in three months.
 
 In 2021, during a walkthrough of SpaceX's Starbase facility, Musk outlined the philosophy behind how his teams build — five steps, in strict order:
 

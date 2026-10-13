@@ -58,14 +58,22 @@ The same principle drove the build-for-longevity decisions: low-code over Python
 
 ## Outcomes
 
+**Scope:** 900+ reports[^1] across NFRA and PBOC, covering 20+ branch entities.
+
 | Metric | Result |
 |---|---|
 | Delivery timeline | 3 months |
-| Monthly FTE saved | 3+ |
-| Report delivery acceleration | 48 hours |
-| System complexity reduction | 40% |
-| Data consistency | 100% via automated validation |
+| Monthly FTE saved | 3+ (net)[^2] |
+| Reporting production time | 48 hours shorter[^3] |
+| System complexity reduction | ~50% (estimate)[^4] |
+| Validation | 100% pass rate on automated cross-report checks and GL reconciliation rules[^5] |
 | Organisational impact | Adopted as bank-wide standard architecture |
+
+[^1]: Report count = report templates × reporting entities (branches).
+[^2]: Baseline: at least 6 full-time staff on the process. Net of my own ongoing maintenance time after go-live.
+[^3]: Reporting production time per submission cycle, shortened by 48 hours.
+[^4]: Estimate: a dozen-plus manually maintained spreadsheets replaced by 6 standardised configuration tables.
+[^5]: Every production run must pass all automated cross-report consistency checks and GL reconciliation rules before submission.
 
 The architecture was eventually adopted as the standard template for all future Finance regulatory reporting automation within the bank — extending beyond loans into a full cross-business framework. A long-standing reconciliation failure between NFRA 1104 and EAST reports was resolved as a byproduct of shared data lineage. When the low-code platform was later retired following a group-level platform decision, the engineering team didn't revert. They went looking for another tool to keep working the same way.
 
